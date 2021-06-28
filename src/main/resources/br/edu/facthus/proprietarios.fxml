@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.facthus.ProprietariosController">
 	
 	<children>
-		<Label fx:id="lblMensagem" text="Tarefa 11: completar" />
+		<Label fx:id="lblMensagem" text="Nome:" />
+      <TextField fx:id="txtNome" />
+      <Label text="CPF:" />
+      <TextField fx:id="txtCPF" />
+      <Label text="Telefone:" />
+      <TextField fx:id="txtTelefone" />
+      <Button mnemonicParsing="false" onAction="#cadastra" text="Cadastrar" />
+      <TableView fx:id="tblPessoa" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="colNome" prefWidth="320.0" text="Nome" />
+          <TableColumn fx:id="colCPF" minWidth="0.0" prefWidth="317.0" text="CPF" />
+          <TableColumn fx:id="colTelefone" minWidth="0.0" prefWidth="317.0" text="Telefone" />
+        </columns>
+      </TableView>
 	</children>
 </VBox>

@@ -12,7 +12,6 @@ import java.util.List;
 import br.edu.facthus.exception.CustomException;
 import br.edu.facthus.model.Pessoa;
 
-// Tarefa 14: completar
 public class InquilinoDAO {
 	
 private Connection connection = null;
@@ -58,11 +57,8 @@ private Connection connection = null;
 					"SELECT id, nome, cpf, telefone FROM pessoas ORDER BY email");
 			
 			while (rs.next()) {
-				Pessoa pessoa = new Pessoa();
+				Pessoa pessoa = new Pessoa(rs.getString("nome"), rs.getString("cpf"), rs.getString("telefone"));
 				pessoa.setId(rs.getInt("id"));
-				pessoa.setNome(rs.getString("nome"));
-				pessoa.setCpf(rs.getString("cpf"));
-				pessoa.setTelefone(rs.getString("telefone"));
 				
 				pessoas.add(pessoa);
 			}
@@ -73,5 +69,4 @@ private Connection connection = null;
 			throw new CustomException("Ocorreu um erro ao pesquisar .");
 		}		
 	}
-
 }

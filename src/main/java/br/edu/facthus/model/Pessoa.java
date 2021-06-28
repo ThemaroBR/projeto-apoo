@@ -2,11 +2,13 @@ package br.edu.facthus.model;
 
 public class Pessoa {
 	
-	protected String nome;
+	private Integer id;
 	
-	protected String cpf;
+	private String nome;
 	
-	protected String telefone;
+	private String cpf;
+	
+	private String telefone;
 	
 	public Pessoa(String nome, String cpf, String telefone) {
 		super();
@@ -39,4 +41,11 @@ public class Pessoa {
 		this.telefone = telefone;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 }
